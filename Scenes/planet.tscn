@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8y3yskwvtj22"]
+
+[ext_resource type="Script" path="res://Scripts/Planet/area_2d.gd" id="1_paydn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0j8mr"]
+radius = 7.0
+
+[node name="Planet" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_paydn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0j8mr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Planet_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Planet_body_exited"]

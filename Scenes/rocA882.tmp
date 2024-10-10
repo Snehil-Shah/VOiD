@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://drak538ovhaem"]
+
+[ext_resource type="Texture2D" uid="uid://dyjrlh1hl0dva" path="res://Downloads/Foozle_2DS0011_Void_MainShip/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_hjxir"]
+[ext_resource type="Script" path="res://Scripts/rocket_sprite.gd" id="2_4qu3b"]
+
+[node name="RocketScene" type="Node2D"]
+
+[node name="RocketSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_hjxir")
+script = ExtResource("2_4qu3b")

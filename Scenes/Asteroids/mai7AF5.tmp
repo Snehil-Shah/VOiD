@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://begghh0d01naj"]
+
+[ext_resource type="Script" path="res://Scripts/Asteroids/main_asteroid.gd" id="1_mp6mh"]
+[ext_resource type="PackedScene" uid="uid://6wu571ewcudv" path="res://Scenes/Asteroids/parallax_background.tscn" id="2_fcmp6"]
+[ext_resource type="PackedScene" uid="uid://b60y8crcs1hns" path="res://Scenes/Asteroids/rocket_scene.tscn" id="3_12u2n"]
+
+[node name="Main_asteroid" type="Node2D"]
+script = ExtResource("1_mp6mh")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_fcmp6")]
+
+[node name="RocketScene" parent="." instance=ExtResource("3_12u2n")]
+
+[node name="Camera2D" type="Camera2D" parent="."]

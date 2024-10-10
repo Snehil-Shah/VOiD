@@ -1,0 +1,93 @@
+[gd_scene load_steps=18 format=3 uid="uid://bsno5de31s5wg"]
+
+[ext_resource type="Script" path="res://Scripts/Red/bullet.gd" id="1_i05sk"]
+[ext_resource type="Texture2D" uid="uid://crkrj6tttaepk" path="res://Downloads/Sprites - Lasers Bullets #1 [66]v2.5/Laser Sprites/07.png" id="2_nywxt"]
+[ext_resource type="Texture2D" uid="uid://c8jaanorg6lul" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_000.png" id="3_4xvtv"]
+[ext_resource type="Texture2D" uid="uid://u2jgk4ocfbpd" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_001.png" id="4_2ikc1"]
+[ext_resource type="Texture2D" uid="uid://d4cf8ierkr1qh" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_002.png" id="5_37ugh"]
+[ext_resource type="Texture2D" uid="uid://cerkjfuvnl4td" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_003.png" id="6_j6gi4"]
+[ext_resource type="Texture2D" uid="uid://t6x1wm6ojktk" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_004.png" id="7_ssqnu"]
+[ext_resource type="Texture2D" uid="uid://drpcsmkkyh1fa" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_005.png" id="8_0s5cv"]
+[ext_resource type="Texture2D" uid="uid://c2rukxemo2fnt" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_006.png" id="9_cuigt"]
+[ext_resource type="Texture2D" uid="uid://cic4y43amdcpt" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_007.png" id="10_q1w0g"]
+[ext_resource type="Texture2D" uid="uid://6dk1jeu5rhqh" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_008.png" id="11_gn7ot"]
+[ext_resource type="Texture2D" uid="uid://c2jctj3132reo" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_009.png" id="12_51h8g"]
+[ext_resource type="Texture2D" uid="uid://p0p7obxkj5ah" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_010.png" id="13_bs62p"]
+[ext_resource type="Texture2D" uid="uid://b42kw25wxqw5i" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_011.png" id="14_4jbss"]
+[ext_resource type="Texture2D" uid="uid://bi4sqf63denq7" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_012.png" id="15_m186o"]
+[ext_resource type="Texture2D" uid="uid://drab43e4nb4a4" path="res://Downloads/VFX Free Pack/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1/Effect_SmallHit_1_013.png" id="16_m8r72"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5a2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4xvtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2ikc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_37ugh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j6gi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ssqnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0s5cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cuigt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q1w0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gn7ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_51h8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bs62p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4jbss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m186o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m8r72")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 30.0
+}]
+
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 6
+mass = 0.001
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_i05sk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nywxt")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(6, -5, 8, -5, 9, -4, 10, -2, 10, 0, 10, 2, 9, 3, 8, 4, 7, 5, 6, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_e5a2c")
+animation = &"explode"
+
+[connection signal="body_entered" from="." to="." method="_on_RigidBody2D_body_entered"]

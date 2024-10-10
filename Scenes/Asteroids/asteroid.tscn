@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbq37vpqqda3f"]
+
+[ext_resource type="Texture2D" uid="uid://bmw6wl0qbagag" path="res://Downloads/Foozle_2DS0015_Void_EnvironmentPack/Foozle_2DS0015_Void_EnvironmentPack/Asteroids/PNGs/Asteroid 01 - Base.png" id="1_pikxl"]
+
+[node name="Asteroid" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(3, -14, 9, -9, 14, -6, 17, -1, 17, 7, 9, 15, 4, 17, -5, 17, -14, 11, -18, 7, -18, 4, -19, -4, -16, -10, -11, -14, -8, -15, -2, -15)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_pikxl")

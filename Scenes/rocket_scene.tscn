@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://drak538ovhaem"]
+
+[ext_resource type="Texture2D" uid="uid://dyjrlh1hl0dva" path="res://Downloads/Foozle_2DS0011_Void_MainShip/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_hjxir"]
+[ext_resource type="Script" path="res://Scripts/rocket_sprite.gd" id="2_4qu3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iutsl"]
+radius = 27.0185
+
+[node name="RocketScene" type="Node2D"]
+z_index = 2
+
+[node name="RocketSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_hjxir")
+script = ExtResource("2_4qu3b")
+
+[node name="Camera2D" type="Camera2D" parent="RocketSprite"]
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="RocketSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSprite/RigidBody2D"]
+shape = SubResource("CircleShape2D_iutsl")

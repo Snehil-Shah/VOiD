@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw0u3pi5c45kc"]
+
+[ext_resource type="Script" path="res://Scripts/Red/red.gd" id="1_5l2op"]
+[ext_resource type="PackedScene" uid="uid://cppgsmfphlfkg" path="res://Scenes/Red/bg.tscn" id="1_dmvmt"]
+[ext_resource type="PackedScene" uid="uid://c7o4bib0ong2d" path="res://Scenes/Red/player.tscn" id="2_x5dmv"]
+[ext_resource type="FontFile" uid="uid://ctlsenoyhso5y" path="res://assets/trivial/Trivial-Regular.otf" id="4_ss0l2"]
+
+[sub_resource type="FontVariation" id="FontVariation_ag46v"]
+base_font = ExtResource("4_ss0l2")
+spacing_bottom = 10
+
+[node name="Red" type="Node2D"]
+script = ExtResource("1_5l2op")
+
+[node name="Node2D" parent="." instance=ExtResource("1_dmvmt")]
+
+[node name="Player" parent="." instance=ExtResource("2_x5dmv")]
+position = Vector2(-12, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -324.0
+offset_top = 30.0
+offset_right = -43.0
+offset_bottom = 123.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Panel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer2/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ag46v")
+theme_override_font_sizes/font_size = 35
+text = "   SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer2/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ag46v")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1

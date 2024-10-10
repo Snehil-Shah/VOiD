@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://chqcyqpi0k4ev"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_7j8eu"]
+[ext_resource type="Texture2D" uid="uid://4g0bxdbhbkv2" path="res://assets/Space Background.png" id="2_0x6cd"]
+[ext_resource type="FontFile" uid="uid://cr68umfrxmrvk" path="res://assets/techno-lcd/Techno LCD.ttf" id="2_pmpfn"]
+[ext_resource type="FontFile" uid="uid://dapblwdv85gv2" path="res://assets/trivial/Trivial-Light.otf" id="3_378by"]
+[ext_resource type="Script" path="res://Scripts/button_click_sfx.gd" id="4_gjgnu"]
+
+[sub_resource type="FontVariation" id="FontVariation_6mfci"]
+base_font = ExtResource("2_pmpfn")
+spacing_glyph = 4
+
+[sub_resource type="FontVariation" id="FontVariation_8yv78"]
+base_font = ExtResource("3_378by")
+spacing_bottom = 10
+
+[sub_resource type="FontVariation" id="FontVariation_jo5g8"]
+base_font = ExtResource("3_378by")
+spacing_bottom = 10
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7j8eu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -750
+alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_6mfci")
+theme_override_font_sizes/font_size = 100
+text = "VOiD"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = SubResource("FontVariation_8yv78")
+theme_override_font_sizes/font_size = 30
+text = "   PLAY   "
+script = ExtResource("4_gjgnu")
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = SubResource("FontVariation_jo5g8")
+theme_override_font_sizes/font_size = 30
+text = "   QUIT   "
+script = ExtResource("4_gjgnu")
+
+[node name="ParallaxBg" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBg"]
+motion_mirroring = Vector2(3000, 3000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBg/ParallaxLayer"]
+modulate = Color(0.97442, 0.665411, 3.85046e-07, 1)
+texture = ExtResource("2_0x6cd")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="VBoxContainer/HBoxContainer/PlayButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://qxu43yjkfhdt"]
+
+[ext_resource type="Texture2D" uid="uid://dsmaik23u4vv6" path="res://assets/main_dark.png" id="1_28uqb"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_28uqb")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]

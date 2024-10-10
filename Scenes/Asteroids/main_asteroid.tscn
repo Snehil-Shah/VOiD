@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://begghh0d01naj"]
+
+[ext_resource type="Script" path="res://Scripts/Asteroids/main_asteroid.gd" id="1_mp6mh"]
+[ext_resource type="PackedScene" uid="uid://6wu571ewcudv" path="res://Scenes/Asteroids/parallax_background.tscn" id="2_fcmp6"]
+[ext_resource type="PackedScene" uid="uid://b60y8crcs1hns" path="res://Scenes/Asteroids/rocket_scene.tscn" id="3_12u2n"]
+[ext_resource type="FontFile" uid="uid://ctlsenoyhso5y" path="res://assets/trivial/Trivial-Regular.otf" id="4_up75o"]
+
+[sub_resource type="FontVariation" id="FontVariation_amrht"]
+base_font = ExtResource("4_up75o")
+spacing_bottom = 10
+
+[node name="Main_asteroid" type="Node2D"]
+script = ExtResource("1_mp6mh")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_fcmp6")]
+
+[node name="RocketScene" parent="." instance=ExtResource("3_12u2n")]
+position = Vector2(168, 46)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -324.0
+offset_top = 30.0
+offset_right = -43.0
+offset_bottom = 123.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Panel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer2/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_amrht")
+theme_override_font_sizes/font_size = 35
+text = "   SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer2/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_amrht")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtua5opduhhxv"]
+
+[ext_resource type="Script" path="res://Scripts/manual.gd" id="1_tadqv"]
+[ext_resource type="FontFile" uid="uid://cr68umfrxmrvk" path="res://assets/techno-lcd/Techno LCD.ttf" id="2_u10hv"]
+[ext_resource type="FontFile" uid="uid://dapblwdv85gv2" path="res://assets/trivial/Trivial-Light.otf" id="3_vpdfv"]
+[ext_resource type="Script" path="res://Scripts/button_click_sfx.gd" id="4_rl0t5"]
+[ext_resource type="Texture2D" uid="uid://4g0bxdbhbkv2" path="res://assets/Space Background.png" id="5_s466p"]
+
+[sub_resource type="FontVariation" id="FontVariation_6mfci"]
+base_font = ExtResource("2_u10hv")
+spacing_space = 1
+
+[sub_resource type="FontVariation" id="FontVariation_8yv78"]
+base_font = ExtResource("3_vpdfv")
+spacing_bottom = 10
+
+[node name="Manual" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tadqv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -700
+alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.0
+offset_top = -124.0
+offset_right = 415.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_6mfci")
+theme_override_font_sizes/font_size = 40
+text = "You are stranded with your spaceship in a never-ending VOiD (life?)
+Swift through, and explore what you find on your way, from lava-infested red planets to black holes to more worlds (we are currently working on).
+Life is dangerous though, and so is the VOiD, keep safe."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = SubResource("FontVariation_8yv78")
+theme_override_font_sizes/font_size = 30
+text = "   CONTINUE   "
+script = ExtResource("4_rl0t5")
+
+[node name="ParallaxBg" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBg"]
+motion_mirroring = Vector2(3000, 3000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBg/ParallaxLayer"]
+modulate = Color(0.97442, 0.665411, 3.85046e-07, 1)
+texture = ExtResource("5_s466p")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="VBoxContainer/HBoxContainer/PlayButton" method="_on_Button_pressed"]

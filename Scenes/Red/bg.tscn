@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://cppgsmfphlfkg"]
+
+[ext_resource type="Texture2D" uid="uid://domm1yoccjm55" path="res://assets/Red/can you make me a 2d.jpg" id="1_nsma5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 2800.0
+offset_bottom = 2800.0
+texture = ExtResource("1_nsma5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D"]
+polygon = PackedVector2Array(-3, 493, 59, 502, 123, 505, 178, 466, 202, 421, 184, 359, 209, 309, 275, 268, 319, 245, 396, 250, 442, 275, 488, 318, 503, 373, 526, 461, 517, 514, 533, 575, 594, 612, 652, 593, 701, 543, 740, 487, 800, 482, 884, 466, 938, 455, 980, 413, 1019, 384, 1075, 377, 1146, 402, 1208, 418, 1292, 434, 1379, 389, 1428, 320, 1454, 275, 1436, 226, 1486, 215, 1511, 168, 1533, 117, 1572, 87, 1590, 47, 1638, 44, 1677, 31, 1718, 28, 1762, 47, 1782, 79, 1805, 142, 1871, 158, 1930, 174, 1980, 193, 2040, 226, 2101, 240, 2162, 234, 2201, 213, 2267, 218, 2317, 201, 2390, 186, 2443, 186, 2507, 209, 2560, 242, 2598, 276, 2658, 284, 2711, 270, 2728, 225, 2758, 204, 2789, 185, 2791, 9, -1, 13)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TextureRect"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D2"]
+polygon = PackedVector2Array(-3, 2590, 83, 2630, 129, 2645, 187, 2614, 236, 2586, 293, 2554, 342, 2514, 408, 2480, 472, 2514, 504, 2584, 525, 2618, 603, 2611, 655, 2573, 718, 2550, 780, 2565, 835, 2590, 893, 2643, 971, 2654, 1042, 2652, 1059, 2599, 1124, 2564, 1199, 2537, 1254, 2486, 1329, 2497, 1395, 2514, 1465, 2514, 1524, 2499, 1588, 2531, 1654, 2567, 1686, 2618, 1733, 2664, 1662, 2701, 1620, 2779, 8, 2784)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="TextureRect"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D3"]
+polygon = PackedVector2Array(2235, 2789, 2236, 2723, 2218, 2689, 2242, 2663, 2208, 2602, 2259, 2536, 2318, 2516, 2357, 2523, 2380, 2561, 2435, 2561, 2493, 2548, 2540, 2534, 2597, 2534, 2623, 2568, 2665, 2567, 2705, 2527, 2739, 2485, 2791, 2489, 2793, 2798)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="TextureRect"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D4"]
+polygon = PackedVector2Array(1746, 1620, 1758, 1638, 1760, 1657, 1751, 1675, 1740, 1687, 1725, 1690, 1707, 1687, 1689, 1671, 1679, 1653, 1679, 1635, 1684, 1621, 1692, 1611, 1705, 1606, 1718, 1605, 1733, 1605, 1744, 1616)
