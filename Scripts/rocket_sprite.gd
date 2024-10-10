@@ -6,6 +6,8 @@ var acceleration: float = 2000.0
 var velocity: Vector2 = Vector2.ZERO
 var friction: float = 0.9
 
+@onready var main = get_parent().get_parent()
+
 # Rotation speed
 var rotation_speed: float = 3.0
 
@@ -25,6 +27,8 @@ func _physics_process(delta: float) -> void:
 
 # Handle input for moving the rocket
 func handle_input(delta: float) -> void:
+	if main.is_changing_scene:
+		return
 	var direction: Vector2 = Vector2.ZERO
 
 	# Move forward/backward
